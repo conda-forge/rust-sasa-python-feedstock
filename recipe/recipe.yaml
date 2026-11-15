@@ -1,6 +1,6 @@
 context:
   name: rust-sasa-python
-  version: "0.7.3"
+  version: "0.7.4"
 
 package:
   name: ${{ name }}
@@ -8,13 +8,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/rust_sasa_python-${{ version }}.tar.gz
-  sha256: da46cee969d2cb5bd1143217c1e3c3103152d91bb022698e4b1c2524b4520e3e
+  sha256: 12be65328466a5fb65914484592c55d9d14aa2b310d4e854e4eb40de6a213652
 
 build:
   script: |
     cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   build:
